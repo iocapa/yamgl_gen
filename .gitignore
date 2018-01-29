@@ -1,0 +1,5 @@
+*.dll
+*.ttf
+*.bat
+*.png
+__pycache__/
