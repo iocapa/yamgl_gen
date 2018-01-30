@@ -23,10 +23,11 @@ setup(
     entry_points = {
         "console_scripts": ['yamgl_gen = yamgl_gen.yamgl_gen:main']
         },
+    include_package_data = True,
     version = version,
-    description = "Python command line application bare bones template.",
+    description = "Data structure generator for the yamgl library (Yet Another Monochrome Graphics Library).",
     long_description = long_descr,
     author = "Ionut-Catalin Pavel",
     author_email = "pavel.ionut.catalin.88@gmail.com",
-    url = "http://gehrckdsdae.de/2014/02/distributing-a-python-command-line-application",
+    url = "https://github.com/iocapa/yamgl_gen",
     )
