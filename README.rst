@@ -40,9 +40,9 @@ Prerequisites
   Compatibility with older version is not guaranteed.
 
 * **yamgl_gen** has the following dependencies:
-* `lxml <https://github.com/lxml/lxml>`_
-* `freetype <https://github.com/rougier/freetype-py>`_
-* `Pillow <https://github.com/python-pillow/Pillow>`_
+  * `lxml <https://github.com/lxml/lxml>`_
+  * `freetype <https://github.com/rougier/freetype-py>`_
+  * `Pillow <https://github.com/python-pillow/Pillow>`_
 
 Installation process
 --------------------
@@ -71,14 +71,15 @@ xml file contains all the objects that generate data.
 Usage scenario
 --------------
 
-A example 'xml <https://github.com/iocapa/yamgl_gen/blob/master/examples/example.xml>`_ 
+A sample `xml <https://github.com/iocapa/yamgl_gen/blob/master/examples/example.xml>`_ 
 file is given inside the examples folder. The file contains generation instructions 
 for some fonts and a image. The fonts and the image are not part of this release due 
 to legal reasons.
 
 The application will generate a pair of source files (a source and a header). The 
 command line syntax is better detailed by running:
-* **python yamgl_gen --help***
+    
+    > python yamgl_gen --help
 
 Package contents
 ================
