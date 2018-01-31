@@ -137,5 +137,5 @@ def main():
 		exit(1)
 
 	#Create and run
-	app = yamglApplication(args.file, src, inc, log = args.log, debug = True)
+	app = yamglApplication(args.file, src, inc, log = args.log, debug = False)
 	app.run()
