@@ -5,6 +5,7 @@
 
 import re
 from setuptools import setup
+from os import path
 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
@@ -12,9 +13,11 @@ version = re.search(
     re.M
     ).group(1)
  
- 
-with open("README.rst", "rb") as f:
-    long_descr = f.read().decode("utf-8")
+
+here = path.abspath(path.dirname(__file__))
+
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_descr = f.read()
  
  
 setup(
