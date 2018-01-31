@@ -3,7 +3,7 @@
 """ Provides the entry point for the application """
 
 #Application version. Modify this accordingly
-__version__ = "0.0.1" 
+__version__ = "0.0.3"
 
 #Imported utility modules
 import sys
@@ -137,5 +137,5 @@ def main():
 		exit(1)
 
 	#Create and run
-	app = yamglApplication(args.file, src, inc, log = args.log, debug = True)
+	app = yamglApplication(args.file, src, inc, log = args.log, debug = False)
 	app.run()
