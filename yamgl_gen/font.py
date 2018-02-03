@@ -72,8 +72,8 @@ class yamglGlyph(yamglObject):
         slot_index = face.get_char_index(index)
         face.load_glyph(slot_index, freetype.FT_LOAD_RENDER | freetype.FT_LOAD_TARGET_MONO)
         glyph_bitmap = face.glyph.bitmap
-		
-		#Properties
+        
+        #Properties
         self.glyph_left = face.glyph.bitmap_left
         self.glyph_top = face.glyph.bitmap_top
         self.glyph_advance = face.glyph.advance.x // 64
@@ -81,7 +81,7 @@ class yamglGlyph(yamglObject):
         self.glyph_name = face.get_glyph_name(slot_index).decode("utf-8") 
         self.glyph_bitmap_object = yamglBitmap(glyph_bitmap.width, glyph_bitmap.rows)
 
-		#Decompress pixels
+        #Decompress pixels
         for y_coord in range(glyph_bitmap.rows):
             for x_coord in range(glyph_bitmap.width):
                 byte_loc = x_coord % 8
@@ -165,7 +165,7 @@ class yamglFont(yamglObject):
             for char_index in range(map_set[0], map_set[1] + 1):
                 self.glyph_objects.append(yamglGlyph(font_face, char_index))
 
-        #Add unknown glyph		
+        #Add unknown glyph        
         self.glyph_objects.append(yamglGlyph(font_face, 65533))
 
 #---------------------------------------------------------------------------------------#
@@ -203,13 +203,20 @@ class yamglFont(yamglObject):
                                     g_name, 
                                     yamglInitList([a.get_init_list() for a in l_obj.glyph_objects]), 
                                     dependency = ["packed_bitmaps"]))
+            
+            #Font data
+            fd_name = "data_font_" + l_obj.object_name
+            generator.add_declaration(yamglDecl(yamglType("static const yamglFontData"),
+                                    fd_name,
+                                    yamglInitList([yamglReference(g_name),
+                                                    yamglReference("packed_unicode_maps", index = l_obj.unicode_map_object.packed_index),
+                                                    yamglConstant(len(l_obj.glyph_objects)),
+                                                    yamglConstant(len(l_obj.unicode_map_object.maps)),
+                                                    yamglConstant(l_obj.vertical_space)]),
+                                    dependency = [g_name]))                
 
             #Constructor 
-            init_object = yamglConstructor("yamglFont", [yamglReference(g_name),
-                                                        yamglReference("packed_unicode_maps", index = l_obj.unicode_map_object.packed_index),
-                                                        yamglConstant(len(l_obj.glyph_objects)),
-                                                        yamglConstant(len(l_obj.unicode_map_object.maps)),
-                                                        yamglConstant(l_obj.vertical_space)])
+            init_object = yamglConstructor("yamglFont", [yamglReference(fd_name)])
             generator.add_declaration(yamglDecl(yamglType("yamglFont"), l_obj.object_name, init_object, dependency = ["packed_bitmaps", g_name, "packed_unicode_maps"]))                      
 
 #---------------------------------------------------------------------------------------#
