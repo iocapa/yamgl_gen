@@ -210,8 +210,8 @@ class yamglGenerator:
         logging.debug("declarations run order: %s" % decl_run_order)
 
         #Add include
-        self.src.write("#include \"yamgl_types.h\"\n")
-        self.src.write("#include \"yamgl_data.h\"\n\n")
+        self.src.write("#include \"yamgl.h\"\n")
+        self.src.write("#include \"yamglData.h\"\n\n")
         
         #Add guards
         self.inc.write("#ifndef _YAMGL_DATA_H_\n")
