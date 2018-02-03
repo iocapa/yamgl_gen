@@ -3,7 +3,7 @@
 """ Provides the entry point for the application """
 
 #Application version. Modify this accordingly
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 #Imported utility modules
 import sys
