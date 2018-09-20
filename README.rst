@@ -21,7 +21,7 @@ for the yamgl library.
 How is yamgl_gen licensed?
 --------------------------
 
-`BSD license <https://github.com/iocapa/yamgl_gen/blob/master/LICENSE>`_.
+`CC-BY-SA <https://github.com/iocapa/yamgl_gen/blob/master/LICENSE>`_.
 
 Contact details
 ---------------
