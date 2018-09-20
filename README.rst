@@ -1,5 +1,5 @@
 ================
-yamgl_gen v0.0.4
+yamgl_gen v0.0.5
 ================
 
 :Author: `Ionut-Catalin Pavel <pavel.ionut.catalin.88@gmail.com>`_

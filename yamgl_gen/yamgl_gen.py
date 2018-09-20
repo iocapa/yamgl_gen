@@ -3,7 +3,7 @@
 """ Provides the entry point for the application """
 
 #Application version. Modify this accordingly
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 
 #Imported utility modules
 import sys
@@ -130,8 +130,8 @@ def main():
 
     #Check and create output files
     try:
-        src = open(os.path.join(args.dir, "yamglData.cpp"), "w")
-        inc = open(os.path.join(args.dir, "yamglData.h"), "w")
+        src = open(os.path.join(args.dir, "yamgl_data.cpp"), "w")
+        inc = open(os.path.join(args.dir, "yamgl_data.hpp"), "w")
     except BaseException as e:
         print("yamgl_gen: error: could not open output files")    
         exit(1)
