@@ -80,7 +80,7 @@ class yamglBitmap(yamglObject):
             l_obj.packed_index = self.find_index(pack_ls, l_obj.pixel_map)
 
         #Create and add declaration
-        generator.add_declaration(yamglDecl(yamglType("static const unsigned char []"), "packed_bitmaps", yamglInitList([yamglConstant(a) for a in pack_ls])))
+        generator.add_declaration(yamglDecl(yamglType("static const y_uint8 []"), "packed_bitmaps", yamglInitList([yamglConstant(a) for a in pack_ls])))
 
 #---------------------------------------------------------------------------------------#
     def run_steps(self, objlist, generator):

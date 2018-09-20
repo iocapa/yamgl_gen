@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yamgl version="0.0.1">
+  <images>
+    <image name="face">
+      <file_path>680532_face_512x512.png</file_path>
+    </image>
+  </images>  
+</yamgl>

@@ -44,9 +44,10 @@ class yamglImage(yamglObject):
         self.bitmap_object = yamglBitmap(local_width, local_heigth)
 
         #Write pixels
-        for w in range(local_width):
-            for h in range(local_heigth):
-                self.bitmap_object.add_pixel(h, w, (1 if bitmap_handle[h, w] != 0 else 0))
+        for h in range(local_heigth):
+            for w in range(local_width):
+                
+                self.bitmap_object.add_pixel(w, h, (1 if bitmap_handle[w, h] != 0 else 0))
 
 #---------------------------------------------------------------------------------------#
     def add_to_generator(self, generator):
@@ -77,13 +78,13 @@ class yamglImage(yamglObject):
         #Create for each object
         for l_obj in objlist:
             #Bitmaps
-            v_type = yamglType("static const yamglBitmap")
-            bmap_name = "bitmap" + l_obj.image_name                        
+            v_type = yamglType("static const yamgl::y_bitmap")
+            bmap_name = "bitmap_" + l_obj.image_name                        
             generator.add_declaration(yamglDecl(v_type, bmap_name, l_obj.bitmap_object.get_init_list(), dependency = ["packed_bitmaps"]))
 
             #Image constructor
-            init_object = yamglConstructor("yamglImage", [yamglReference(bmap_name)])
-            generator.add_declaration(yamglDecl(yamglType("yamglImage"), l_obj.image_name, init_object, dependency = ["packed_bitmaps", bmap_name]))
+            init_object = yamglConstructor("yamgl::y_pixmap", [yamglConstant(bmap_name)])
+            generator.add_declaration(yamglDecl(yamglType("yamgl::y_pixmap"), l_obj.image_name, init_object, dependency = ["packed_bitmaps", bmap_name]))
 
 #---------------------------------------------------------------------------------------#
     def run_steps(self, objlist, generator):
