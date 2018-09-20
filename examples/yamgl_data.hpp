@@ -1,8 +1,9 @@
 #ifndef _YAMGL_DATA_HPP_
 #define _YAMGL_DATA_HPP_
 
-extern yamgl::pixmap face;
-extern yamgl::font timesnewroman;
-extern yamgl::font verdana;
+extern yamgl::y_pixmap face;
+extern yamgl::y_font verdana_8;
+extern yamgl::y_font verdana_12;
+extern yamgl::y_font verdana_30;
 
 #endif

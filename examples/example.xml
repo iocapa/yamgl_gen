@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <yamgl version="0.0.1">
   <fonts>
-    <!--font name="starjedi_40">
-      <file_path>Starjedi.ttf</file_path>
-      <point_size>30</point_size>
-      <char_maps>
-        <char_map>
-          <from>32</from>
-          <to>126</to>
-        </char_map>
-      </char_maps>
-    </font-->
-    <font name="timesnewroman_12">
-      <file_path>TimesNewRoman.ttf</file_path>
-      <point_size>12</point_size>
-      <char_maps>
-        <char_map>
-          <from>32</from>
-          <to>126</to>
-        </char_map>
-      </char_maps>
-    </font>
-	<font name="flipps_14">
-      <file_path>Fipps-Regular.otf</file_path>
-      <point_size>14</point_size>
-      <char_maps>
-        <char_map>
-          <from>32</from>
-          <to>126</to>
-        </char_map>
-		<char_map>
-          <from>176</from>
-          <to>176</to>
-        </char_map>
-      </char_maps>
-    </font>
     <font name="verdana_8">
       <file_path>verdana.ttf</file_path>
       <point_size>8</point_size>
@@ -59,7 +25,7 @@
         </char_map>
       </char_maps>
     </font>   
-    <!--font name="verdana_30">
+    <font name="verdana_30">
       <file_path>verdana.ttf</file_path>
       <point_size>30</point_size>
       <char_maps>
@@ -67,18 +33,16 @@
           <from>32</from>
           <to>126</to>
         </char_map>
+		<char_map>
+          <from>176</from>
+          <to>176</to>
+        </char_map>
       </char_maps>
-    </font--> 
+    </font> 
   </fonts>
   <images>
     <image name="face">
-      <file_path>680532_face_512x512.png</file_path>
-    </image>
-    <!--image name="monalisa">
-      <file_path>monalisa.png</file_path>
-    </image-->
-    <image name="test_image">
-      <file_path>test_image.png</file_path>
+      <file_path>face.png</file_path>
     </image>
   </images>  
 </yamgl>
